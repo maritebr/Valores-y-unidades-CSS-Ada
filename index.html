@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header ><a href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Values_and_units" target="_blank"> valores y unidades en css</a></header>
+    
+        <table class="tabla1">
+            <tr>
+                <th>Unidades absolutas</th>
+                <th >Unidad</th>
+                <th class="ancho">Equivalencias</th>
+                <th>Uso</th>
+                <th>Ventajas</th>
+                <th>Desventajas</th>
+                
+            </tr>
+            <tr>
+                <td class="claro"> Milimetros</td>
+                <td>mm</td>
+                <td>1mm = 1/10 de 1cm </td>
+                <td rowspan="6"> Todas estas unidades son unidades de longitud absoluta: no son relativas a nada más y en general se considera que siempre tienen el mismo tamaño.</td>
+                <td rowspan="6">La principal ventaja de las unidades absolutas es que su valor es el que está expresado y el que se va a aplicar, no hay que hacer cálculos intermedios.</td>
+                <td rowspan="6">A pesar de la aparente ventaja mencionada anteriormente, no son las más utilizadas ya que resultan poco adaptables a la multiplicidad de dispositivos</td>
+            
+            </tr>
+            <tr>
+                <td class="claro">Centimetros</td>
+                <td>cm</td>
+                <td>1cm = 96px/2,54</td>
+                
+            </tr>
+            <tr>
+                <td class="claro">Cuartos de milimetros</td>
+                <td>Q</td>
+                <td>1Q = 1/40 de 1cm</td>
+              
+            </tr>
+            <tr>
+                <td class="claro">Pulgadas</td>
+                <td>in</td>
+                <td>1in = 2.54cm = 25.4mm</td>
+            </tr>
+            <tr>
+                <td class="claro">Puntos</td>
+                <td>pt</td>
+                <td>1in = 6pc = 72pt</td>
+            </tr>
+            <tr>
+                <td class="claro">Picas</td>
+                <td>pc</td>
+                <td>1in = 6pc</td>
+            </tr>
+            <tr>
+                <td class="claro">Pixeles</td>
+                <td>px</td>
+                <td>96 px = 1in = 2.54cm</td>
+                <td>Es la unidad mínima de resolución de la pantalla. En realidad suele considerársela una unidad absoluta, relativa o híbrida dependiendo del criterio que se analice.
+                 Si analizamos que el pixel es una división física de la pantalla podríamos decir que corresponde definirla como unidad absoluta. Sin embargo, en los diferentes dispositivos estos pixeles tienen variaciones de tamaño, que aunque son mínimas y a veces imperceptibles, dan pie a que algunos autores la consideren unidad relativa.
+                 Se recomienda para distancias pequeñas (anchos de bordes, márgenes, etc.)</td>
+                 <td>Muchos diseñadores web utilizan unidades de píxeles en la web. documentos con el fin de producir una representación de píxel perfecto de su Sitio tal como está renderizado en el navegador.</td>
+                 <td>No se puede escalar con resoluciones. Su diseño siempre tendrá el mismo ancho, lo que hará que se desperdicie el espacio cuando las personas tengan resoluciones altas. Un problema con la unidad de píxeles es que no se amplía para los lectores con discapacidad visual o hacia abajo para adaptarse a dispositivos móviles.</td>
+
+            </tr>
+        
+        </table>
+   
+      
+        <table class="tabla2" >
+            <tr>
+                <th>Unidades relativas</th>
+                <th>Unidad</th>
+                <th class="ancho">Equivalencias</th>
+                <th>Uso</th>
+                <th>Ventajas</th>
+                <th>Desventajas</th>
+                
+            </tr>
+            <tr>
+                <td class="claro">Porcentajes</td>
+                <td>%</td>
+                <td>Su valor está calculado siempre en base a otro elemento.</td>
+                <td>La unidad de medida porcentual es la que se usa por defecto en los elementos HTML en donde de manera predeterminada cada elemento de bloque usa un ancho del 100%, es por eso que cuando achicamos la ventana del navegador con una página que no tenga estilos, la página se adapta, ya que siempre usará el ancho total visible.El uso de los porcentajes también lo podemos llevar a elementos interiores del layout.</td>
+                <td>Las escalas con el tamaño de la pantalla, por lo tanto, pueden usar más espacio si está disponible.</td>
+                <td>Hace más difícil saber la exactaposición de algo en pantalla. Como resultado, puede hacer que la creación de diseños precisos sea más difícil. Puede llevar a diseños inesperados si los elementos secundarios tienen un ancho fijo (es decir, una imagen) y terminan siendo más grandes que su ancho de fluido padre.</td>
+
+                
+            </tr>
+            <tr>
+                <td class="claro">Ems</td>
+                <td>em</td>
+                <td>16px = 1em</td>
+                <td>Para los textos y para algunas medidas como padding y margin se recomienda el uso de ems. </td>
+                <td>Es recomendable usar la unidad de medida em para definir los tamaños de fuente, los altos de línea y también para elementos de diseño que no requieran ser muy exactos o que requieran una medida que tenga relación con el tamaño del texto, como por ejemplo el margen entre párrafos, el relleno interior de los blockquotes, etc. Ems se está volviendo cada vez más popular en los documentos web debido a La escalabilidad y su naturaleza amigable para dispositivos móviles. </td>
+                <td rowspan="2">Se puede aplicar a elementos generales del layout aunque no es muy recomendable, ya que si eventualmente se cambia el tamaño de fuente de uno de ellos, se podría estropear el diseño.</td>
+            </tr>
+            <tr>
+                <td class="claro">Rems</td>
+                <td>rem</td>
+                <td>1rem = 16px</td>
+                <td>Funciona igual que el em, con la diferencia que es relativo al valor de la fuente del elemento html, y no tiene en cuenta el valor heredado o del elemento que lo contiene.</td>
+                <td>Usar rem nos permite cierta estructura para poder definir ciertas partes del layout, pero al mismo tiempo nos entrega cierta escalabilidad para respetar las configuraciones de cada usuario.Los rem, son una unidad muy interesante también para definir los media quieries de CSS. Dale un vistazo al código fuente de esta misma página y verás que los rem, son la unidad más utilizada en diferentes instancias.</td>
+               
+            </tr>
+            <tr>
+                <td class="claro">Vh / Vw</td>
+                <td>vh / vw</td>
+                <td>1vh / 1vw = 1%</td>
+                <td>Las medidas vh y vw son medidas relativas de acuerdo al viewport. Vh hace referencia a la centésima parte de la altura del viewport y vw a la centésima parte del ancho del viewport. Estas medidas tienen múltiples usos, por ejemplo cuando queremos tener una imagen de fondo que ocupe todo el ancho y alto de nuestro pantalla. También cuando queremos que nuestro texto varíe de acuerdo a las medidas del dispositivo. </td>
+                <td>Son de mucha utilidad en proyectos que requieran ser responsive. Las medidas vh y vw nos sirven mucho para determinadas tareas que deseemos hacer como: la imagen de fondo o el tamaño de texto según el viewport. </td>
+                <td>Es recomendable revisar siempre en que navegadores son compatibles, ya que no en todos lo son. Hay algunas observaciones al utilizar estas unidades en dispositivos móvil, dado que en algunos dispositivos se toma en cuenta el ancho de la barra scroll.</td>
+            </tr>
+                
+        </table>
+        <table class="tabla3">
+            <tr>
+                <th>Otras unidades</th>
+                <th>Unidad</th>
+                <th class="ancho">Equivalencias</th>
+                <th>Uso</th>
+            </tr>
+            <tr>
+                <td class="claro">X-height</td>
+                <td>ex</td>
+                <td>1ex = 0.5em</td>
+                <td>Es útil cuando desea ajustar el tamaño de algo en relación con el alto de las letras minúsculas de su texto. unidad relativa a la altura de la letra "x" minúscula de un determinado cuerpo y alfabeto. También es un concepto proveniente del diseño tipográfico. </td>
+   
+            </tr>
+            <tr>
+                <td class="claro">Ch</td>
+                <td>ch</td>
+                <td>1ch = ancho de caracter 0</td>
+                <td>Esta unidad representa la anchura, o más precisamente, la medida de avance, del glifo '0' (cero, de caracter Unicode U+0030) en la fuente (font) del elemento.</td>
+                
+            </tr>
+        </table>
+        <footer>
+            <p>Otras referencias</p> 
+            <p class="referencia"><a href="https://www.laurachuburu.com.ar/tutoriales/unidades-de-medida-css.php" >clik aqui</a></p>
+            
+
+        </footer>
+                
+    
+    </body>
+</html>
